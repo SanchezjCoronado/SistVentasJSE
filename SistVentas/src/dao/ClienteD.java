@@ -12,7 +12,7 @@ public class ClienteD extends Conexion {
     public void registrar(ClienteM client) throws Exception {
         try {
             String sql = "insert into Cliente(nomClient,apeClient,docIdent,direcClient) values(?,?,?,?)";
-            PreparedStatement ps = this.Cadena().prepareStatement(sql);
+            PreparedStatement ps = this.cadena().prepareStatement(sql);
             ps.setString(1, client.getNomClient());
             ps.setString(2, client.getApeClient());
             ps.setString(3, client.getDocIdent());
@@ -28,7 +28,7 @@ public class ClienteD extends Conexion {
     public void modificar(ClienteM client) throws Exception {
         try {
             String sql = "update Cliente set nomClient=?, apeClient=?, docIdent=?, direcClient=? where codClient=?";
-            PreparedStatement ps = this.Cadena().prepareStatement(sql);
+            PreparedStatement ps = this.cadena().prepareStatement(sql);
             ps.setString(1, client.getNomClient());
             ps.setString(2, client.getApeClient());
             ps.setString(3, client.getDocIdent());
@@ -46,7 +46,7 @@ public class ClienteD extends Conexion {
     public void eliminar(int codClient) throws Exception {
         try {
             String sql = "delete from Cliente where codClient= " + codClient;
-            Statement st = this.Cadena().createStatement();
+            Statement st = this.cadena().createStatement();
             st.executeUpdate(sql);
             st.close();
             JOptionPane.showMessageDialog(null, "Eliminación correcta");

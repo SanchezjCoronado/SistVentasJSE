@@ -19,7 +19,34 @@ public class EmpleadoM {
     private String dni;
     private String sexo;
     private Date fechanac;
+    private String nick;
+    private String clave;
+    private int tipo;
     private String telefono, celular, direccion, distrito, cargo, especialidad, estado;
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
 
     public int getIdempleado() {
         return idempleado;

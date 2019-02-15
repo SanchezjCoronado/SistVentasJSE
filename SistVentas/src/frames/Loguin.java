@@ -1,25 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package frames;
 
 import controlador.UsuarioC;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import model.UsuarioM;
 
-/**
- *
- * @author Deivy
- */
 public class Loguin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Loguin
-     */
     public Loguin() {
         initComponents();
         setLocationRelativeTo(null);
@@ -169,68 +156,80 @@ public class Loguin extends javax.swing.JFrame {
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
         try {
-            UsuarioM u = new UsuarioM();
-            u.setNick(tbxusuario.getText().trim());
-            u.setClave(String.valueOf(tbxclave.getPassword()));
-            int nro = UsuarioC.IngresoLogin(u);
-            if (nro >= 1) {
-                Tienda f = new Tienda();
-
-                f.setVisible(true);
-                f.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                setVisible(false);
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Usuario no registrado");
+//            UsuarioM u = new UsuarioM();
+//            u.setNick(tbxusuario.getText().trim());
+//            u.setClave(String.valueOf(tbxclave.getPassword()));
+//            int nro = UsuarioC.IngresoLogin(u);
+//            if (nro >= 1) {
+//                Tienda f = new Tienda();
+//
+//                f.setVisible(true);
+//                f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//                setVisible(false);
+//            } else {
+//                JOptionPane.showMessageDialog(rootPane, "Usuario no registrado");
+//            }
+            UsuarioC usuario = new UsuarioC();
+            usuario.loguin();
+            System.out.println(usuario.loguin());
+            if (usuario.loguin()==1){
+                System.out.println("usuario no existe");
+            }else{
+                Tienda tiendita = new Tienda();
+                tiendita.setVisible(true);
+                this.setVisible(false);
             }
+                    
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             JOptionPane.showMessageDialog(rootPane, e.toString());
         }
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void tbxclaveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbxclaveKeyPressed
-        // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                UsuarioM u = new UsuarioM();
-                u.setNick(tbxusuario.getText().trim());
-                u.setClave(String.valueOf(tbxclave.getPassword()));
-                int nro = UsuarioC.IngresoLogin(u);
-                if (nro >= 1) {
-                    Tienda f = new Tienda();
-
-                    f.setVisible(true);
-                    f.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    setVisible(false);
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Usuario no registrado");
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, e.toString());
-            }
-        }
+//        // TODO add your handling code here:
+//         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+//            try {
+//                UsuarioM u = new UsuarioM();
+//                u.setNick(tbxusuario.getText().trim());
+//                u.setClave(String.valueOf(tbxclave.getPassword()));
+//                int nro = UsuarioC.IngresoLogin(u);
+//                if (nro >= 1) {
+//                    Tienda f = new Tienda();
+//
+//                    f.setVisible(true);
+//                    f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//                    setVisible(false);
+//                } else {
+//                    JOptionPane.showMessageDialog(rootPane, "Usuario no registrado");
+//                }
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(rootPane, e.toString());
+//            }
+//        }
     }//GEN-LAST:event_tbxclaveKeyPressed
 
-    private void btnaceptarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnaceptarKeyPressed
-       if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                UsuarioM u = new UsuarioM();
-                u.setNick(tbxusuario.getText().trim());
-                u.setClave(String.valueOf(tbxclave.getPassword()));
-                int nro = UsuarioC.IngresoLogin(u);
-                if (nro >= 1) {
-                    Tienda f = new Tienda();
-
-                    f.setVisible(true);
-                    f.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    setVisible(false);
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Usuario no registrado");
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, e.toString());
-            }
-        }
-    }//GEN-LAST:event_tbxclaveKeyPressed
+    private void btnaceptarKeyPressed(java.awt.event.KeyEvent evt) {                                      
+//       if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+//            try {
+//                UsuarioM u = new UsuarioM();
+//                u.setNick(tbxusuario.getText().trim());
+//                u.setClave(String.valueOf(tbxclave.getPassword()));
+//                int nro = UsuarioC.IngresoLogin(u);
+//                if (nro >= 1) {
+//                    Tienda f = new Tienda();
+//
+//                    f.setVisible(true);
+//                    f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//                    setVisible(false);
+//                } else {
+//                    JOptionPane.showMessageDialog(rootPane, "Usuario no registrado");
+//                }
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(rootPane, e.toString());
+//            }
+//        }
+    }                                   
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
